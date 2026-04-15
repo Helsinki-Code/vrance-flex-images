@@ -1,0 +1,6 @@
+{
+  "name": "VranceFlex Image Forge",
+  "description": "Premium AI image generation engine for B2B editorial assets, powered by Gemini 3.1.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["Image Generation", "CSV Batch Processing"]
+}
