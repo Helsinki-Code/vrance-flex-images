@@ -15,13 +15,15 @@
           const originalFetch = window.fetch;
           if (originalFetch) {
             Object.defineProperty(window, 'fetch', {
-              value: originalFetch,
-              writable: true,
+              get: function() { return originalFetch; },
+              set: function(val) { 
+                console.warn('Ignored attempt to overwrite window.fetch'); 
+              },
               configurable: true
             });
           }
         } catch (e) {
-          console.warn("Could not make window.fetch writable, but this is expected in some environments.");
+          console.warn("Could not redefine window.fetch:", e);
         }
       })();
     </script>
